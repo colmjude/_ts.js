@@ -1,0 +1,1 @@
+_ts.js is a utility library of common tiddlyspace tasks. It is designed to be used specifically when creating SPAs for tiddlyspace.
