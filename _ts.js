@@ -23,7 +23,7 @@
 	 * returns url of the SiteIcon to use
 	 */
 	function getSiteIconURL(username) {
-		if (username === 'GUEST') {
+		if (!username || username === 'GUEST') {
 			return 'http://tiddlyspace.com/SiteIcon';
 		}
 		return 'http://tiddlyspace.com/bags/' + username +
