@@ -1,7 +1,7 @@
 /*
  * Provide some useful TiddlySpace helper functions
  */
-(function(exports) {
+(function(exports, $) {
 	"use strict";
 
 	/*
@@ -113,4 +113,4 @@
 		tagsToString: tagsToString
 	};
 
-}(window));
+}(window, jQuery));
