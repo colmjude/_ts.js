@@ -62,4 +62,19 @@ describe('_ts.js library', function() {
 
 	});
 
+	describe('the tagsToString function', function() {
+		var result;
+
+		it('should return all tags in a single string', function() {
+			result = _ts.tagsToString(['tag1', 'tag2']);
+			expect(result).toBe("tag1 tag2");
+		});
+
+		it('should put multi word tags in tiddlywiki brackets [[]]', function() {
+			result = _ts.tagsToString(['multi word tag']);
+			expect(result).toBe("[[multi word tag]]");
+		});
+
+	});
+
 });
