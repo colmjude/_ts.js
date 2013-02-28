@@ -34,4 +34,32 @@ describe('_ts.js library', function() {
 
 	});
 
+	describe('the stringToTags function', function() {
+		var result,
+			tagStr = "tag1 [[the 2nd tag]]";
+
+		beforeEach(function() {
+			this.addMatchers({
+				toBeArray: function() {
+					return toString.call(this.actual) === "[object Array]";
+				}
+			});
+			result = _ts.stringToTags(tagStr);
+		});
+
+		it('should output an array', function() {
+			expect(_ts.stringToTags("")).toBeArray();
+			expect(result).toBeArray();
+		});
+
+		it('should put single word tags into a single place in the output array', function() {
+			expect(result[0]).toBe("tag1");
+		});
+
+		it('should put multi word tags into a single place in the output array', function() {
+			expect(result[1]).toBe("the 2nd tag");
+		});
+
+	});
+
 });
