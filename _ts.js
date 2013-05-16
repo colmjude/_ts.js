@@ -5,6 +5,17 @@
 	"use strict";
 
 	/*
+	 * perform ajax setup steps
+	 */
+	function ajaxSetup() {
+		$.ajaxSetup({
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader("X-ControlView", "false");
+			}
+		});
+	}
+
+	/*
 	 * Turn a TiddlyWeb date into a date object
 	 */
 	function toDate(date) {
@@ -89,6 +100,7 @@
 
 	// export _ts object with all available funcs
 	exports._ts = {
+		ajaxSetup: ajaxSetup,
 		toDate: toDate,
 		getSiteIconURL: getSiteIconURL,
 		getUserDetails: getUserDetails,
