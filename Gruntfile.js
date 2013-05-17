@@ -8,17 +8,11 @@ module.exports = function(grunt) {
     },
     jasmine: {
         src:['test/lib/jquery.js', '_ts.js'],
-        specs: 'test/*Spec.js',
-        helpers: 'test/lib/jasmine-jquery-1.3.1.js',
-        timeout: 10000,
-        template: 'test/SpecRunner.tmpl'
-    },
-    qunit: {
-      files: ['test/**/*.html']
-    },
-    watch: {
-      files: '<config:lint.files>',
-      tasks: 'lint qunit'
+		options: {
+			specs: 'test/*Spec.js',
+			helpers: 'test/lib/jasmine-jquery-1.3.1.js',
+			template: 'test/SpecRunner.tmpl'
+		}
     },
     jshint: {
       options: {
@@ -32,15 +26,22 @@ module.exports = function(grunt) {
         undef: true,
         boss: true,
         eqnull: true,
-        browser: true
+        browser: true,
+		globals: {
+			"jQuery": true,
+			"tiddlyweb": true
+		}
       },
-      globals: {}
+		files: {
+			src: ["Gruntfile.js", "_ts.js"]
+		}
     }
   });
 
 	// Default task.
-	grunt.registerTask('default', 'lint jasmine');
+	grunt.registerTask('default', ["jshint", "jasmine"]);
 	// load tasks
-	grunt.loadNpmTasks('grunt-jasmine-runner');
+	grunt.loadNpmTasks('grunt-contrib-jasmine');
+	grunt.loadNpmTasks("grunt-contrib-jshint");
 
 };

@@ -1,18 +1,20 @@
 {
     "name":"_ts.js",
-    "version":"0.0.1",
+    "version":"0.0.2",
     "description":"A utility library to be used with SPAs on tiddlyspace",
     "main":"grunt.js",
     "repository":{
         "type":"git",
-        "url":""
+        "url":"git://github.com:colmjude/_ts.js.git"
     },
     "keywords":[
         "Tiddlyspace"
     ],
     "author":"Osmosoft",
     "license":"BSD",
-    "dependencies":{
-        "grunt-jasmine-runner":"0.5.x"
-    }
+	"devDependencies": {
+		"grunt": "~0.4.0",
+		"grunt-contrib-jshint": "~0.3.0",
+		"grunt-contrib-jasmine":"~0.4.x"
+	}
 }
