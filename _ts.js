@@ -69,6 +69,15 @@
 	}
 
 	/*
+	 * test to see if current user is member of the space
+	 */
+	function userIsAMember(statusObj) {
+		var recipe = statusObj.space.recipe;
+		var isMember = (recipe.match(/_private$/)) ? true : false;
+		return isMember;
+	}
+
+	/*
 	 * checks if string is an acceptable space name
 	 * returns boolean
 	 */
@@ -120,6 +129,7 @@
 		toDate: toDate,
 		getSiteIconURL: getSiteIconURL,
 		getUserDetails: getUserDetails,
+		userIsAMember: userIsAMember,
 		isValidSpaceName: isValidSpaceName,
 		stringToTags: stringToTags,
 		tagsToString: tagsToString
