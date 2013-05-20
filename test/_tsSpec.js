@@ -77,4 +77,29 @@ describe('_ts.js library', function() {
 
 	});
 
+	describe('the userIsAMember function', function() {
+		var result,
+			statusObj = {
+				space: {
+					recipe: "some-space_private",
+					name: "Some name"
+				}
+			};
+
+		beforeEach(function() {
+			result = undefined;
+		});
+
+		it('should return true if the recipe contains private suffix', function() {
+			result = _ts.userIsAMember(statusObj);
+			expect(result).toBeTruthy();
+		});
+
+		it('should return false if the recipe contains public suffix', function() {
+			statusObj.space.recipe = "some-space_public";
+			result = _ts.userIsAMember(statusObj);
+			expect(result).toBeFalsy();
+		});
+	});
+
 });
