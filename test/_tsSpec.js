@@ -102,4 +102,13 @@ describe('_ts.js library', function() {
 		});
 	});
 
+    describe('the friendlyURI function', function() {
+        var uri = "http://colm-htmlrep.tiddlyspace.com/bags/colm-htmlrep_public/tiddlers/HtmlJavascript",
+            friendlyUri = "http://colm-htmlrep.tiddlyspace.com/HtmlJavascript";
+
+        it('should return a friendly uri given canonical', function() {
+            expect( _ts.friendlyURI(uri) ).toBe( friendlyUri );
+        });
+    })
+
 });
