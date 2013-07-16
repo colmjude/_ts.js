@@ -57,6 +57,17 @@
 		'_public/tiddlers/SiteIcon';
 	}
 
+    /*
+     * returns friendly uri given tiddlers canonical uri
+     */
+    function friendlyURI(uri) {
+        if (!uri.match(/\/\/tiddlyspace\.com/)) {
+         return uri.replace(/\/bags\/[^\/]+\/tiddlers/, '');
+        } else {
+         return uri;
+        }
+    }
+
 	/*
 	 * Get user details from status.js (or server)
 	 */
@@ -128,6 +139,7 @@
 		ajaxSetup: ajaxSetup,
 		toDate: toDate,
 		getSiteIconURL: getSiteIconURL,
+		friendlyURI: friendlyURI,
 		getUserDetails: getUserDetails,
 		userIsAMember: userIsAMember,
 		isValidSpaceName: isValidSpaceName,
