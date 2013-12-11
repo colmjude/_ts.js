@@ -96,6 +96,13 @@
 		return name.match(/^[a-z][0-9a-z\-]*[0-9a-z]$/) ? true : false;
 	}
 
+    /*
+     * return space name from bag str
+     */
+    function spaceFromBag( bag ) {
+        return bag.replace("_public", "").replace("_private", "");
+    }
+
 	/*
 	 * turn string of tags back into tag array
 	 */
@@ -143,6 +150,7 @@
 		getUserDetails: getUserDetails,
 		userIsAMember: userIsAMember,
 		isValidSpaceName: isValidSpaceName,
+		spaceFromBag: spaceFromBag,
 		stringToTags: stringToTags,
 		tagsToString: tagsToString
 	};
