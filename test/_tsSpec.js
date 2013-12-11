@@ -127,4 +127,10 @@ describe('_ts.js library', function() {
         });
     });
 
+    describe('a function to return uri given space name and host', function() {
+        it('should add the space name before the host to make a valid tiddlyspace uri', function() {
+            expect( _ts.generateSpaceUri( "tiddlyspace.com", "faq" ) ).toBe( "http://faq.tiddlyspace.com" );
+        });
+    });
+
 });
