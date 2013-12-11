@@ -109,7 +109,7 @@ describe('_ts.js library', function() {
         it('should return a friendly uri given canonical', function() {
             expect( _ts.friendlyURI(uri) ).toBe( friendlyUri );
         });
-    })
+    });
 
     describe('the spaceFromBag function', function() {
         var space = "colmjude";
@@ -125,6 +125,6 @@ describe('_ts.js library', function() {
         it('should return str if str does not include private or public suffix', function() {
             expect( _ts.spaceFromBag("colmjude") ).toBe( space );
         });
-    })
+    });
 
 });
