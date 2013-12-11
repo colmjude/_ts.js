@@ -30,6 +30,14 @@
 		));
 	}
 
+    /*
+     * Generate space uri from bag str
+     */
+    function generateSpaceUri( host, bag ) {
+        var space = spaceFromBag( bag );
+        return "http://" + space + "." + host;
+    }
+
 	/*
 	 * Return the CSRF token stored in a cookie
 	 */
@@ -145,6 +153,7 @@
 	exports._ts = {
 		ajaxSetup: ajaxSetup,
 		toDate: toDate,
+		generateSpaceUri: generateSpaceUri,
 		getSiteIconURL: getSiteIconURL,
 		friendlyURI: friendlyURI,
 		getUserDetails: getUserDetails,
