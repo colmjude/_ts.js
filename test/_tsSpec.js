@@ -111,4 +111,20 @@ describe('_ts.js library', function() {
         });
     })
 
+    describe('the spaceFromBag function', function() {
+        var space = "colmjude";
+
+        it('should remove _public if bag is the public bag', function() {
+            expect( _ts.spaceFromBag("colmjude_public") ).toBe( space );
+        });
+
+        it('should remove _private if bag is the private bag', function() {
+            expect( _ts.spaceFromBag("colmjude_private") ).toBe( space );
+        });
+
+        it('should return str if str does not include private or public suffix', function() {
+            expect( _ts.spaceFromBag("colmjude") ).toBe( space );
+        });
+    })
+
 });
