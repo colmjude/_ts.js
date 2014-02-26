@@ -83,7 +83,7 @@
         if (window.tiddlyweb && tiddlyweb.status) {
             callback(tiddlyweb.status);
         } else {
-            $.getJSON('/status.js', callback);
+            $.getJSON('/status', callback);
         }
     }
 
